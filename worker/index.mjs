@@ -3,7 +3,7 @@
  * the admin panel. Request order is the contract:
  *
  *   1. redirects  — real 301s, checked before anything can shadow them
- *   2. /api/*     — the CMS (auth, content, forms, media proxy)
+ *   2. /_api/*    — the CMS (auth, content, forms, media proxy); /api/* still answers
  *   3. /admin/*   — the admin SPA from dist/admin, with an index fallback
  *   4. assets     — the built site from dist/
  *
@@ -40,7 +40,8 @@ export default {
     // address resolves them against the wrong base and renders blank.
     if (pathname === "/admin") return Response.redirect(`${url.origin}/admin/`, 301);
 
-    if (pathname.startsWith("/api/") || pathname.startsWith("/admin/oauth/")) {
+    // The admin calls /_api/*; /api/* is the older address and still answers.
+    if (pathname.startsWith("/_api/") || pathname.startsWith("/api/") || pathname.startsWith("/admin/oauth/")) {
       return cms.fetch(request, env, ctx);
     }
 
