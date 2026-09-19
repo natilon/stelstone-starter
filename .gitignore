@@ -5,3 +5,6 @@ dist/
 .cms-history/
 # Local secrets for `npm run preview` (wrangler dev)
 .dev.vars
+# Local build state, rewritten on every `astro build`
+.astro/data-store.json
+.astro/settings.json

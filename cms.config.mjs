@@ -26,9 +26,13 @@ export default {
     // publish it instantly.
     draftBranch: "cms-drafts",
     pagesDir: "src/pages-data",
-    assetsDir: "public/images",
+    // Images the repo holds. The admin's picker browses and uploads here, and
+    // the build resizes what the pages use — see the two pictures on /about.
+    assetsDir: "src/assets",
     publishBranch: "main",
-    publishPaths: ["src/pages-data"],
+    // Publish stages these. The assets directory has to be here too, or an
+    // image uploaded through the admin stays on the machine that received it.
+    publishPaths: ["src/pages-data", "src/assets"],
         commitMessage: (ts) => `Content update ${ts}`,
     // The GitHub backend lists entries from per-collection _index.json
     // manifests. "lazy" bootstraps a missing manifest with one GraphQL call

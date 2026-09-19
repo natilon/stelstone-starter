@@ -11,12 +11,12 @@
     "deploy": "npm run build && wrangler deploy -c worker/wrangler.jsonc"
   },
   "dependencies": {
-    "@stelstone/admin-ui": "^0.28.0",
-    "@stelstone/astro-blocks": "^0.11.1",
-    "stelstone": "^6.0.6",
-    "@stelstone/blocks": "^0.10.0",
-    "@stelstone/server": "^0.36.0",
-    "@stelstone/worker": "^0.8.8",
+    "@stelstone/admin-ui": "^0.29.0",
+    "@stelstone/astro-blocks": "^0.12.0",
+    "stelstone": "^6.0.7",
+    "@stelstone/blocks": "^0.11.0",
+    "@stelstone/server": "^0.37.0",
+    "@stelstone/worker": "^0.8.9",
     "astro": "^7.0.0"
   },
   "devDependencies": {

@@ -53,7 +53,7 @@ stays up. Add the secrets in either order.
 > add a plain variable `GITHUB_REPO` = `your-user/your-repo` next to the
 > secrets — that overrides the build-time auto-detection.
 
-## Five things to try first
+## Six things to try first
 
 1. **Edit the homepage** — change a paragraph, hit *Save*. The live site
    doesn't move: saves land on the `cms-drafts` branch.
@@ -64,6 +64,13 @@ stays up. Add the secrets in either order.
    generated from the page's "Old paths" field.
 5. **Break a link — try to.** Internal links are picked from a page list;
    `npm run build` verifies every one and names the page if something's off.
+6. **Look at the two pictures on `/about`.** One is an SVG in `public/`,
+   served byte for byte. The other is a JPEG in `src/assets/`, so the build
+   resizes and re-encodes it — 459 kB in the repo, 62 kB on the page, with a
+   `srcset` for smaller screens. Locally the admin's image picker browses
+   that directory and uploads into it; deployed, where a Worker has no
+   filesystem, it offers a media CDN instead. Both are explained in
+   [Media](https://github.com/natilon/stelstone/blob/main/docs/media.md).
 
 ## Local development
 

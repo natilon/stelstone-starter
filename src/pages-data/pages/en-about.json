@@ -8,8 +8,39 @@
     "description": "A small studio that ships and then sleeps."
   },
   "blocks": [
-    { "id": "b1", "type": "text", "properties": { "content": "<p>We're a small studio. We hand sites to clients and we like our phones quiet afterwards — which is why this starter runs on a CMS where an editor can't break the site: no broken links, no accidental publishes, no lost content.</p>" } },
-    { "id": "b2", "type": "image", "properties": { "src": "/images/team.svg", "alt": "Stylized illustration of a three-person team at work", "spacingTop": "small", "spacing": "medium" } },
-    { "id": "b3", "type": "blockquote", "properties": { "content": "Ship it, then sleep.", "cite": "The studio motto" } }
+    {
+      "id": "b1",
+      "type": "text",
+      "properties": {
+        "content": "<p>We're a small studio. We hand sites to clients and we like our phones quiet afterwards — which is why this starter runs on a CMS where an editor can't break the site: no broken links, no accidental publishes, no lost content.</p>"
+      }
+    },
+    {
+      "id": "b2",
+      "type": "image",
+      "properties": {
+        "src": "/images/team.svg",
+        "alt": "Stylized illustration of a three-person team at work",
+        "spacingTop": "small",
+        "spacing": "medium"
+      }
+    },
+    {
+      "id": "b2a",
+      "type": "image",
+      "properties": {
+        "src": "/src/assets/pages/dusk-ridge.jpg",
+        "alt": "A ridge at dusk — this one is a file in the repository, so the build resizes it",
+        "spacing": "medium"
+      }
+    },
+    {
+      "id": "b3",
+      "type": "blockquote",
+      "properties": {
+        "content": "Ship it, then sleep.",
+        "cite": "The studio motto"
+      }
+    }
   ]
 }
