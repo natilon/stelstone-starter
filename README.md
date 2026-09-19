@@ -40,6 +40,12 @@ Variables and Secrets → Add**, type **Secret**:
 Secrets take effect immediately — no redeploy needed. Prefer the terminal?
 `npx wrangler secret put GITHUB_TOKEN -c worker/wrangler.jsonc` does the same.
 
+Until `ADMIN_PASS` exists the Worker's API answers `503` ("CMS is not
+configured … set ADMIN_PASS") whatever else is set, on purpose: without a
+password the CMS would let every request in as admin, and with
+`GITHUB_TOKEN` beside it that is write access to your repo. The site itself
+stays up. Add the secrets in either order.
+
 **Verify:** open `https://<your-worker>.workers.dev/admin/` and sign in as
 `admin` with your `ADMIN_PASS`.
 

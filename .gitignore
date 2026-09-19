@@ -3,3 +3,5 @@ dist/
 .env
 .wrangler/
 .cms-history/
+# Local secrets for `npm run preview` (wrangler dev)
+.dev.vars
