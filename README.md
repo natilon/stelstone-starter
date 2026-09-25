@@ -53,6 +53,15 @@ stays up. Add the secrets in either order.
 > add a plain variable `GITHUB_REPO` = `your-user/your-repo` next to the
 > secrets — that overrides the build-time auto-detection.
 
+### Optional: don't rebuild on image uploads
+
+An image uploaded from the admin is committed to `main` on its own, and goes
+live with the next *Publish*. Workers Builds rebuilds on every commit, so
+without this each upload costs one extra build. Nothing breaks either way.
+
+**Workers & Pages → your worker → Settings → Build → Build watch paths →**
+exclude `src/assets/*`.
+
 ## Six things to try first
 
 1. **Edit the homepage** — change a paragraph, hit *Save*. The live site
@@ -67,9 +76,9 @@ stays up. Add the secrets in either order.
 6. **Look at the two pictures on `/about`.** One is an SVG in `public/`,
    served byte for byte. The other is a JPEG in `src/assets/`, so the build
    resizes and re-encodes it — 459 kB in the repo, 62 kB on the page, with a
-   `srcset` for smaller screens. Locally the admin's image picker browses
-   that directory and uploads into it; deployed, where a Worker has no
-   filesystem, it offers a media CDN instead. Both are explained in
+   `srcset` for smaller screens. The admin's image picker browses that
+   directory and uploads into it — on disk locally, and deployed as a commit
+   to your repo, which the next Publish builds. Both are explained in
    [Media](https://github.com/natilon/stelstone/blob/main/docs/media.md).
 
 ## Local development

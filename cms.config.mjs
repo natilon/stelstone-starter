@@ -61,8 +61,9 @@ export default {
     },
   },
 
-  // Media CDN — optional. Without it, images live in public/images and are
-  // picked from the local assets list in the admin.
+  // Media CDN — optional. Without it, images live in `assetsDir` above: the
+  // picker lists and uploads them there, on disk locally and as commits to
+  // this repo when deployed. A CDN is for a library that keeps growing.
   // media: { cdnBase: "https://cdn.example.com", tenantId: "your-tenant" },
 
   // Site-specific block: the contact form. The site's [...slug].astro maps
