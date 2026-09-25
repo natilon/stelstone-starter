@@ -38,7 +38,7 @@ Variables and Secrets → Add**, type **Secret**:
 | `RESEND_API_KEY` | *optional* — contact-form delivery ([resend.com](https://resend.com); also set `mail.from` in `cms.config.mjs`) |
 
 Secrets take effect immediately — no redeploy needed. Prefer the terminal?
-`npx wrangler secret put GITHUB_TOKEN -c worker/wrangler.jsonc` does the same.
+`npx wrangler secret put GITHUB_TOKEN` does the same.
 
 Until `ADMIN_PASS` exists the Worker's API answers `503` ("CMS is not
 configured … set ADMIN_PASS") whatever else is set, on purpose: without a
@@ -101,7 +101,7 @@ works without this; the templates list is just empty:
 
 ```bash
 npx wrangler kv namespace create TEMPLATES_KV
-# → uncomment kv_namespaces in worker/wrangler.jsonc with the printed id
+# → uncomment kv_namespaces in wrangler.jsonc with the printed id
 npm run deploy
 ```
 

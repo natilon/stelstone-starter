@@ -1,6 +1,10 @@
+// At the repo root on purpose: Workers Builds (and the deploy button) run a
+// bare `npx wrangler deploy`. With no config here, Wrangler "auto-configures"
+// the project by running `astro add cloudflare`, which swaps in an SSR
+// adapter this static site doesn't use — and the build breaks.
 {
   "name": "stelstone-starter",
-  "main": "index.mjs",
+  "main": "worker/index.mjs",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],
 
@@ -12,7 +16,7 @@
   // `not_found_handling` here: it would answer misses at the asset layer and
   // the redirect middleware would never see them.
   "assets": {
-    "directory": "../dist",
+    "directory": "dist",
     "binding": "ASSETS"
   },
 
@@ -31,7 +35,7 @@
 
   "observability": { "enabled": true }
 
-  // Secrets — npx wrangler secret put <NAME> -c worker/wrangler.jsonc
+  // Secrets — npx wrangler secret put <NAME>
   //   GITHUB_TOKEN     fine-grained PAT with read/write Contents on THIS repo
   //   ADMIN_PASS       admin panel password
   //   RESEND_API_KEY   (optional) contact-form delivery

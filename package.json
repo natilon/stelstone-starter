@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "node --env-file-if-exists=.env node_modules/.bin/astro dev",
     "build": "astro build && node scripts/postbuild.mjs",
-    "preview": "npm run build && wrangler dev -c worker/wrangler.jsonc",
-    "deploy": "npm run build && wrangler deploy -c worker/wrangler.jsonc"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@stelstone/admin-ui": "^0.30.0",
