@@ -3,7 +3,9 @@
 // the project by running `astro add cloudflare`, which swaps in an SSR
 // adapter this static site doesn't use — and the build breaks.
 {
-  "name": "stelstone-starter",
+  // What the deploy button offers as the Worker and repository name. A
+  // placeholder on purpose: rename it to your site in the deploy form.
+  "name": "my-stelstone-site",
   "main": "worker/index.mjs",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],

@@ -10,9 +10,11 @@ build, moved pages keep their old paths as real 301s.
 
 ## The deploy button, then one token
 
-The button clones this repo into your GitHub account (any name you pick —
-the build auto-detects it), connects builds so **every push to `main`
-redeploys**, and deploys the Worker. On the way it asks for **`ADMIN_PASS`**,
+The button clones this repo into your GitHub account, connects builds so
+**every push to `main` redeploys**, and deploys the Worker. **Rename
+`my-stelstone-site`** in the form to your site's name. It becomes both the
+repository and the Worker (and its `workers.dev` address), and the build
+detects whatever you pick. On the way it asks for **`ADMIN_PASS`**,
 the admin panel password: there is no default, so type your own. The site is
 live immediately; the admin needs one more secret, which can only exist once
 your repository does.
