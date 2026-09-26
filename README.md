@@ -8,12 +8,14 @@ build, moved pages keep their old paths as real 301s.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/natilon/stelstone-starter)
 
-## After the deploy button: two secrets, and you're done
+## The deploy button, then one token
 
 The button clones this repo into your GitHub account (any name you pick —
 the build auto-detects it), connects builds so **every push to `main`
-redeploys**, and deploys the Worker. The site is live immediately; the
-admin needs two secrets it cannot invent for you:
+redeploys**, and deploys the Worker. On the way it asks for **`ADMIN_PASS`**,
+the admin panel password: there is no default, so type your own. The site is
+live immediately; the admin needs one more secret, which can only exist once
+your repository does:
 
 ### 1. Create a GitHub token (this is how the CMS writes your content)
 
@@ -34,7 +36,7 @@ Variables and Secrets → Add**, type **Secret**:
 | Name             | Value                                   |
 | ---------------- | --------------------------------------- |
 | `GITHUB_TOKEN`   | the token from step 1                   |
-| `ADMIN_PASS`     | the admin panel password you choose     |
+| `ADMIN_PASS`     | only if you left it empty in the deploy form |
 | `RESEND_API_KEY` | *optional* — contact-form delivery ([resend.com](https://resend.com); also set `mail.from` in `cms.config.mjs`) |
 
 Secrets take effect immediately — no redeploy needed. Prefer the terminal?
@@ -44,7 +46,7 @@ Until `ADMIN_PASS` exists the Worker's API answers `503` ("CMS is not
 configured … set ADMIN_PASS") whatever else is set, on purpose: without a
 password the CMS would let every request in as admin, and with
 `GITHUB_TOKEN` beside it that is write access to your repo. The site itself
-stays up. Add the secrets in either order.
+stays up.
 
 **Verify:** open `https://<your-worker>.workers.dev/admin/` and sign in as
 `admin` with your `ADMIN_PASS`.

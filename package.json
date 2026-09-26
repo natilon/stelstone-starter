@@ -21,5 +21,18 @@
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "ADMIN_PASS": {
+        "description": "The password for the admin panel at `/admin/` (user: `admin`). **Choose your own** — with the GitHub token it can write to your repository. Generate one with `openssl rand -base64 24`."
+      },
+      "GITHUB_TOKEN": {
+        "description": "A [fine-grained token](https://github.com/settings/personal-access-tokens) with **Contents: Read and write** on this site's repository — how the admin saves content and uploads images."
+      },
+      "RESEND_API_KEY": {
+        "description": "*Optional.* A [Resend](https://resend.com) API key for contact-form email."
+      }
+    }
   }
 }
