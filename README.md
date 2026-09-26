@@ -15,7 +15,15 @@ the build auto-detects it), connects builds so **every push to `main`
 redeploys**, and deploys the Worker. On the way it asks for **`ADMIN_PASS`**,
 the admin panel password: there is no default, so type your own. The site is
 live immediately; the admin needs one more secret, which can only exist once
-your repository does:
+your repository does.
+
+**The quick way:** open `https://<your-worker>.workers.dev/admin/` and sign in
+as `admin`. Until the token is set, the admin opens on a *Connect your
+repository* screen with a link to GitHub's token form, already filled in, the
+exact place to paste the result, and a **Test connection** button. It also
+says what's wrong if a token is expired, read-only or made for another repo.
+
+The same steps by hand:
 
 ### 1. Create a GitHub token (this is how the CMS writes your content)
 
